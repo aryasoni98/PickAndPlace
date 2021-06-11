@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		7C09E9FA2673E97B00CB15C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C09E9F92673E97B00CB15C9 /* AppDelegate.swift */; };
 		7C09E9FC2673E97B00CB15C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C09E9FB2673E97B00CB15C9 /* ContentView.swift */; };
-		7C09E9FE2673E97B00CB15C9 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 7C09E9FD2673E97B00CB15C9 /* Experience.rcproject */; };
 		7C09EA002673E97D00CB15C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C09E9FF2673E97D00CB15C9 /* Assets.xcassets */; };
 		7C09EA032673E97D00CB15C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA022673E97D00CB15C9 /* Preview Assets.xcassets */; };
 		7C09EA0E2673E97D00CB15C9 /* PickAndPlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C09EA0D2673E97D00CB15C9 /* PickAndPlaceTests.swift */; };
 		7C09EA192673E97D00CB15C9 /* PickAndPlaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C09EA182673E97D00CB15C9 /* PickAndPlaceUITests.swift */; };
+		7C09EA2E2673F12900CB15C9 /* toy_robot_vintage.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA272673F12900CB15C9 /* toy_robot_vintage.usdz */; };
+		7C09EA2F2673F12900CB15C9 /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA282673F12900CB15C9 /* toy_biplane.usdz */; };
+		7C09EA302673F12900CB15C9 /* chair_swan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA292673F12900CB15C9 /* chair_swan.usdz */; };
+		7C09EA332673F12900CB15C9 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA2C2673F12900CB15C9 /* fender_stratocaster.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 		7C09E9F62673E97B00CB15C9 /* PickAndPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickAndPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C09E9F92673E97B00CB15C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C09E9FB2673E97B00CB15C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7C09E9FD2673E97B00CB15C9 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		7C09E9FF2673E97D00CB15C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C09EA022673E97D00CB15C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C09EA042673E97D00CB15C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		7C09EA142673E97D00CB15C9 /* PickAndPlaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickAndPlaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C09EA182673E97D00CB15C9 /* PickAndPlaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPlaceUITests.swift; sourceTree = "<group>"; };
 		7C09EA1A2673E97D00CB15C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C09EA272673F12900CB15C9 /* toy_robot_vintage.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_robot_vintage.usdz; sourceTree = "<group>"; };
+		7C09EA282673F12900CB15C9 /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
+		7C09EA292673F12900CB15C9 /* chair_swan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair_swan.usdz; sourceTree = "<group>"; };
+		7C09EA2C2673F12900CB15C9 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,9 @@
 		7C09E9F82673E97B00CB15C9 /* PickAndPlace */ = {
 			isa = PBXGroup;
 			children = (
+				7C09EA262673F08F00CB15C9 /* Models */,
 				7C09E9F92673E97B00CB15C9 /* AppDelegate.swift */,
 				7C09E9FB2673E97B00CB15C9 /* ContentView.swift */,
-				7C09E9FD2673E97B00CB15C9 /* Experience.rcproject */,
 				7C09E9FF2673E97D00CB15C9 /* Assets.xcassets */,
 				7C09EA042673E97D00CB15C9 /* Info.plist */,
 				7C09EA012673E97D00CB15C9 /* Preview Content */,
@@ -131,6 +137,17 @@
 				7C09EA1A2673E97D00CB15C9 /* Info.plist */,
 			);
 			path = PickAndPlaceUITests;
+			sourceTree = "<group>";
+		};
+		7C09EA262673F08F00CB15C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C09EA292673F12900CB15C9 /* chair_swan.usdz */,
+				7C09EA2C2673F12900CB15C9 /* fender_stratocaster.usdz */,
+				7C09EA282673F12900CB15C9 /* toy_biplane.usdz */,
+				7C09EA272673F12900CB15C9 /* toy_robot_vintage.usdz */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +255,10 @@
 			files = (
 				7C09EA032673E97D00CB15C9 /* Preview Assets.xcassets in Resources */,
 				7C09EA002673E97D00CB15C9 /* Assets.xcassets in Resources */,
+				7C09EA2F2673F12900CB15C9 /* toy_biplane.usdz in Resources */,
+				7C09EA302673F12900CB15C9 /* chair_swan.usdz in Resources */,
+				7C09EA332673F12900CB15C9 /* fender_stratocaster.usdz in Resources */,
+				7C09EA2E2673F12900CB15C9 /* toy_robot_vintage.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +285,6 @@
 			files = (
 				7C09E9FC2673E97B00CB15C9 /* ContentView.swift in Sources */,
 				7C09E9FA2673E97B00CB15C9 /* AppDelegate.swift in Sources */,
-				7C09E9FE2673E97B00CB15C9 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
