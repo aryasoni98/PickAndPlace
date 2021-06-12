@@ -9,6 +9,11 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    
+    @State private var isPlacementEnabled = false
+    @State private var selectedModel: String?
+    @State private var modelConfirmedForPlacement: String?
+    
     private var models: [String] = {
         let filemanager = FileManager.default
         
@@ -29,7 +34,11 @@ struct ContentView : View {
         ZStack(alignment: .bottom) {
             ARViewContainer()
             
-            ModelPickerView(models: self.models)
+            if self.isPlacementEnabled {
+                PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled)
+            } else {
+                ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled, models: self.models)
+            }
         }
     }
 }
@@ -49,6 +58,9 @@ struct ARViewContainer: UIViewRepresentable {
 }
 
 struct ModelPickerView : View {
+
+    @Binding var isPlacementEnabled: Bool
+    
     var models: [String]
     
     var body: some View{
@@ -58,6 +70,7 @@ struct ModelPickerView : View {
                     index in
                     Button(action: {
                         print("DEBUG: selected model with name: \(self.models[index])")
+                        self.isPlacementEnabled = true
                     }) {
                         Image(uiImage: UIImage(named: self.models[index])!)
                             .resizable()
@@ -71,6 +84,42 @@ struct ModelPickerView : View {
         }
         .padding(20)
         .background(Color.black.opacity(0.5))
+    }
+}
+
+struct PlacementButtonsView: View {
+    
+    @Binding var isPlacementEnabled: Bool
+    
+    var body: some View {
+        HStack {
+            Button(action: {print("DEBUG: Cancel model canceled.")
+                self.resetPlacementParameters()
+            })
+            {
+                Image(systemName: "xmark")
+                    .frame(width: 60, height: 60)
+                    .font(.title)
+                    .background(Color.white.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+            Button(action: {print("DEBUG: Model placement confirmed")
+                self.resetPlacementParameters()
+            })
+            {
+                Image(systemName: "checkmark")
+                    .frame(width: 60, height: 60)
+                    .font(.title)
+                    .background(Color.white.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+        }
+    }
+    
+    func resetPlacementParameters() {
+        self.isPlacementEnabled = false
     }
 }
 
