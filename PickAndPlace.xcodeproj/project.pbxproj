@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		7C09EA2F2673F12900CB15C9 /* toy_biplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA282673F12900CB15C9 /* toy_biplane.usdz */; };
 		7C09EA302673F12900CB15C9 /* chair_swan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA292673F12900CB15C9 /* chair_swan.usdz */; };
 		7C09EA332673F12900CB15C9 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 7C09EA2C2673F12900CB15C9 /* fender_stratocaster.usdz */; };
+		7C729E7526753C16009BEFA2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C729E7426753C16009BEFA2 /* Model.swift */; };
+		7C729E7826754358009BEFA2 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 7C729E7726754358009BEFA2 /* FocusEntity */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		7C09EA282673F12900CB15C9 /* toy_biplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = toy_biplane.usdz; sourceTree = "<group>"; };
 		7C09EA292673F12900CB15C9 /* chair_swan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chair_swan.usdz; sourceTree = "<group>"; };
 		7C09EA2C2673F12900CB15C9 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
+		7C729E7426753C16009BEFA2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C729E7826754358009BEFA2 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,7 @@
 				7C09EA262673F08F00CB15C9 /* Models */,
 				7C09E9F92673E97B00CB15C9 /* AppDelegate.swift */,
 				7C09E9FB2673E97B00CB15C9 /* ContentView.swift */,
+				7C729E7426753C16009BEFA2 /* Model.swift */,
 				7C09E9FF2673E97D00CB15C9 /* Assets.xcassets */,
 				7C09EA042673E97D00CB15C9 /* Info.plist */,
 				7C09EA012673E97D00CB15C9 /* Preview Content */,
@@ -166,6 +171,9 @@
 			dependencies = (
 			);
 			name = PickAndPlace;
+			packageProductDependencies = (
+				7C729E7726754358009BEFA2 /* FocusEntity */,
+			);
 			productName = PickAndPlace;
 			productReference = 7C09E9F62673E97B00CB15C9 /* PickAndPlace.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +245,9 @@
 				Base,
 			);
 			mainGroup = 7C09E9ED2673E97B00CB15C9;
+			packageReferences = (
+				7C729E7626754358009BEFA2 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = 7C09E9F72673E97B00CB15C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C729E7526753C16009BEFA2 /* Model.swift in Sources */,
 				7C09E9FC2673E97B00CB15C9 /* ContentView.swift in Sources */,
 				7C09E9FA2673E97B00CB15C9 /* AppDelegate.swift in Sources */,
 			);
@@ -602,6 +614,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C729E7626754358009BEFA2 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C729E7726754358009BEFA2 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C729E7626754358009BEFA2 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C09E9EE2673E97B00CB15C9 /* Project object */;
 }
