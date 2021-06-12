@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 struct ContentView : View {
     
@@ -32,35 +33,53 @@ struct ContentView : View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer()
+            ARViewContainer(modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
             
             if self.isPlacementEnabled {
-                PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled)
+                PlacementButtonsView(isPlacementEnabled: self.$isPlacementEnabled, selectedModel: self.$selectedModel, modelConfirmedForPlacement: self.$modelConfirmedForPlacement)
             } else {
-                ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled, models: self.models)
+                ModelPickerView(isPlacementEnabled: self.$isPlacementEnabled, selecteModel: self.$selectedModel, models: self.models)
             }
         }
     }
 }
 
 struct ARViewContainer: UIViewRepresentable {
+    @Binding var modelConfirmedForPlacement: String?
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
         
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = [.horizontal, .vertical]
+        config.environmentTexturing = .automatic
+        
+        if
+            ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh){
+            config.sceneReconstruction = .mesh
+        }
+        
+        arView.session.run(config)
         return arView
         
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        if let modelName = self.modelConfirmedForPlacement {
+            print("DEBUG: Adding model to scene - \(modelName)")
+            DispatchQueue.main.async {
+                self.modelConfirmedForPlacement = nil
+            }
+        }
+    }
     
 }
 
 struct ModelPickerView : View {
 
     @Binding var isPlacementEnabled: Bool
-    
+    @Binding var selecteModel: String?
     var models: [String]
     
     var body: some View{
@@ -70,6 +89,7 @@ struct ModelPickerView : View {
                     index in
                     Button(action: {
                         print("DEBUG: selected model with name: \(self.models[index])")
+                        self.selecteModel = self.models[index]
                         self.isPlacementEnabled = true
                     }) {
                         Image(uiImage: UIImage(named: self.models[index])!)
@@ -90,6 +110,8 @@ struct ModelPickerView : View {
 struct PlacementButtonsView: View {
     
     @Binding var isPlacementEnabled: Bool
+    @Binding var selectedModel: String?
+    @Binding var modelConfirmedForPlacement: String?
     
     var body: some View {
         HStack {
@@ -105,6 +127,8 @@ struct PlacementButtonsView: View {
                     .padding(20)
             }
             Button(action: {print("DEBUG: Model placement confirmed")
+                
+                self.modelConfirmedForPlacement = self.selectedModel
                 self.resetPlacementParameters()
             })
             {
@@ -120,6 +144,7 @@ struct PlacementButtonsView: View {
     
     func resetPlacementParameters() {
         self.isPlacementEnabled = false
+        self.selectedModel = nil
     }
 }
 
