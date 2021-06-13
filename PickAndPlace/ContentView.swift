@@ -8,7 +8,6 @@
 import SwiftUI
 import RealityKit
 import ARKit
-import FocusEntity
 
 struct ContentView : View {
     
@@ -85,6 +84,11 @@ struct ARViewContainer: UIViewRepresentable {
             }
         }
     }
+}
+
+class CustomARView: ARView {
+    let focusSquare = <#value#>
+    
 }
 
 struct ModelPickerView : View {
